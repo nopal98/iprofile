@@ -101,7 +101,7 @@ $paypal_id = html_escape($settings->paypal_email);
                                                                         <input type="hidden" name="return" value="<?php echo base_url('admin/subscription/payment_success/' . $billing_type . '/' . html_escape($package->id) . '/' . html_escape($payment_id)) ?>">
 
                                                                         <div class="mt-30">
-                                                                            <button class="btn btn-primary" href="#">Pay Now <?php echo $settings->currency_symbol; ?><?php echo html_escape($price) ?></button>
+                                                                            <a class="btn btn-primary" href="http://wa.me/send/?phone=6285156039256&text=%5BPayment%5D%0APackage+<?= html_escape($package->name); ?>+%0APrice+%3A+Rp.+<?= html_escape($price) ?>+.%0A%0AI%27ve+made+a+payment+to+OVO%2FDana+account+in+this+number.+%0A&app_absent=0">Pay Now <?php echo $settings->currency_symbol; ?><?php echo html_escape($price) ?></a>
                                                                         </div>
                                                                     </div>
                                                                 </form>
