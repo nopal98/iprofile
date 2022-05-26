@@ -58,12 +58,12 @@ $paypal_id = html_escape($settings->paypal_email);
                                         <?php endif ?>
 
                                         <?php if (settings()->stripe_payment == 1) : ?>
-                                            <li class="<?php if (settings()->stripe_payment == 1 && settings()->paypal_payment == 0) {
-                                                            echo "active";
-                                                        } ?>">
+                                            <!-- <li class="<?php if (settings()->stripe_payment == 1 && settings()->paypal_payment == 0) {
+                                                                echo "active";
+                                                            } ?>">
                                                 <a href="#tab_default_2" data-toggle="tab">
                                                     Stripe </a>
-                                            </li>
+                                            </li> -->
                                         <?php endif ?>
 
                                     </ul> <br> <br>
@@ -78,6 +78,12 @@ $paypal_id = html_escape($settings->paypal_email);
                                                                                                                 } else {
                                                                                                                     echo "none";
                                                                                                                 } ?>">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            Plase Send Payment to OVO or Dana to this number <br>
+                                                            <b> 085156039256 </b> - A.n Fawwaz Al - Aziz
+                                                        </div>
+                                                    </div>
                                                     <div class="row">
                                                         <div class="box col-md-12 text-center">
 
