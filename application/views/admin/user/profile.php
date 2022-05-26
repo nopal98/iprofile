@@ -15,7 +15,7 @@
                                                                             } ?></h5>
 
             <h5 class="text-center">Joined: <?php echo get_time_ago($user->created_at); ?></h5>
-            <a href="https://wa.me/6285156039256" class="btn btn-primary text-center">Payment Confirmation</a>
+            <div align="Center"><a href="https://wa.me/6285156039256" class="btn btn-primary">Payment Confirmation</a></div>
             <br>
             <?php if (check_my_payment_status() == TRUE) : ?>
               <h5 class="text-center text-danger"><b><?php echo date_dif(date('Y-m-d'), $payment->expire_on) ?> Days left</b></h5>
