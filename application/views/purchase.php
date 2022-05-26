@@ -81,7 +81,7 @@ $paypal_id = html_escape($settings->paypal_email);
                                                     <div class="container">
                                                         <div class="row">
                                                             <div class="col-md-12">
-                                                                Plase Send Payment to OVO or Dana to this number <br>
+                                                                Plase Send Payment to OVO/Dana/Gopay to this number <br>
                                                                 <b> 085156039256 </b> - A.n Fawwaz Al - Aziz
                                                             </div>
                                                         </div>
