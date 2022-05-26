@@ -78,10 +78,12 @@ $paypal_id = html_escape($settings->paypal_email);
                                                                                                                 } else {
                                                                                                                     echo "none";
                                                                                                                 } ?>">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            Plase Send Payment to OVO or Dana to this number <br>
-                                                            <b> 085156039256 </b> - A.n Fawwaz Al - Aziz
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                Plase Send Payment to OVO or Dana to this number <br>
+                                                                <b> 085156039256 </b> - A.n Fawwaz Al - Aziz
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="row">
@@ -89,7 +91,7 @@ $paypal_id = html_escape($settings->paypal_email);
 
                                                             <div class="box-body text-center padding-50">
 
-                                                                <h4 class="">Paypal Payment - Upgrade Plan</h4>
+                                                                <h4 class="">Confirmation</h4>
                                                                 <p class="mb-0 text-center">Package: <?php echo html_escape($package->name); ?> (<strong><?php echo $settings->currency_symbol; ?><?php echo html_escape($price) ?> <?php echo html_escape($frequency) ?></strong>)</p><br>
 
 
@@ -107,8 +109,9 @@ $paypal_id = html_escape($settings->paypal_email);
                                                                         <input type="hidden" name="return" value="<?php echo base_url('admin/subscription/payment_success/' . $billing_type . '/' . html_escape($package->id) . '/' . html_escape($payment_id)) ?>">
 
                                                                         <div class="mt-30">
-                                                                            <a class="btn btn-primary" href="http://wa.me/send/?phone=6285156039256&text=%5BPayment%5D%0APackage+<?= html_escape($package->name); ?>+%0APrice+%3A+Rp.+<?= html_escape($price) ?>+.%0A%0AI%27ve+made+a+payment+to+OVO%2FDana+account+in+this+number.+%0A&app_absent=0">Pay Now <?php echo $settings->currency_symbol; ?><?php echo html_escape($price) ?></a>
+                                                                            <a class="btn btn-primary" href="http://wa.me/send/?phone=6285156039256&text=%5BPayment%5D%0APackage+<?= html_escape($package->name); ?>+%0APrice+%3A+Rp.+<?= html_escape($price) ?>+.%0A%0AI%27ve+made+a+payment+to+OVO%2FDana+account+in+this+number.+%0A&app_absent=0">Confirm Now <?php echo $settings->currency_symbol; ?><?php echo html_escape($price) ?></a>
                                                                         </div>
+
                                                                     </div>
                                                                 </form>
                                                                 <!-- /PRICE ITEM -->
