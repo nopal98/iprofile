@@ -78,8 +78,11 @@
             <?php if (!is_admin()) : ?>
               <?php if (check_my_payment_status() == 0 && $settings->enable_paypal == 1) : ?>
                 <li>
-                  <div class="alert-danger-cus mt-15 mr-20"> <i class="fa fa-info-circle"></i> Your account is limited due to payment</div>
                   <a class="btn btn-primary" href="https://wa.me/6285156039256" target="_blank">Payment Confirmation</a>
+                </li>
+                <li>
+                  <div class="alert-danger-cus mt-15 mr-20"> <i class="fa fa-info-circle"></i> Your account is limited due to payment</div>
+
                 </li>
               <?php endif ?>
 
