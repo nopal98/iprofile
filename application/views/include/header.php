@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <?php $settings = get_settings(); ?>
+
 <head>
     <meta charset="utf-8">
-    <meta name="author" content="Codericks">
+    <meta name="author" content="Naufal Ihsan">
     <meta name="description" content="<?php echo html_escape($settings->description) ?>">
     <meta name="keywords" content="<?php echo html_escape($settings->keywords) ?>">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
-    <?php if (isset($page_title) && $page_title == 'Post details'): ?>
-        <title><?php if(isset($post)){echo $post->title;}else{echo html_escape($settings->site_name);} ?> - <?php echo html_escape($settings->site_name) ?></title>
-    <?php else: ?>
+    <?php if (isset($page_title) && $page_title == 'Post details') : ?>
+        <title><?php if (isset($post)) {
+                    echo $post->title;
+                } else {
+                    echo html_escape($settings->site_name);
+                } ?> - <?php echo html_escape($settings->site_name) ?></title>
+    <?php else : ?>
         <title><?php echo html_escape($settings->site_name); ?> - <?php echo html_escape($settings->site_title) ?></title>
     <?php endif ?>
-    
-    <!-- Favicon icon -->  
+
+    <!-- Favicon icon -->
     <link rel="icon" href="<?php echo base_url($settings->favicon) ?>">
 
     <!-- Plugin CSS -->
@@ -39,19 +44,19 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/front/css/responsive.css">
     <script src="<?php echo base_url() ?>assets/front/js/vendor/modernizr-2.8.3.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/default/css/aos.css"/>
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/default/css/aos.css" />
 
     <!-- csrf token -->
     <script type="text/javascript">
-       var csrf_token = '<?php echo $this->security->get_csrf_hash(); ?>';
-       var token_name = '<?php echo $this->security->get_csrf_token_name();?>'
+        var csrf_token = '<?php echo $this->security->get_csrf_hash(); ?>';
+        var token_name = '<?php echo $this->security->get_csrf_token_name(); ?>'
     </script>
-    
+
     <!-- google analytics -->
-    <?php if (!empty($settings->google_analytics)): ?>
+    <?php if (!empty($settings->google_analytics)) : ?>
         <?php echo base64_decode($settings->google_analytics) ?>
     <?php endif ?>
-    
+
     <!-- recaptcha js -->
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
@@ -64,14 +69,20 @@
     </div>
 
     <!-- Preloader -->
-        <div class="preloader">
-            <div class="container text-center"><div class="spinner-md"></div></div>
+    <div class="preloader">
+        <div class="container text-center">
+            <div class="spinner-md"></div>
         </div>
+    </div>
     <!-- /Preloader -->
-    
+
     <!-- Header Area -->
     <header class="header-area">
-        <nav class="navbar mainmenu-area <?php if(isset($page_title) && $page_title == 'Home'){echo"fixed-top";}else{echo"static";} ?>" data-spy="affix" data-offset-top="200">
+        <nav class="navbar mainmenu-area <?php if (isset($page_title) && $page_title == 'Home') {
+                                                echo "fixed-top";
+                                            } else {
+                                                echo "static";
+                                            } ?>" data-spy="affix" data-offset-top="200">
             <div class="container">
                 <div class="equal-height">
                     <div class="site-branding">
@@ -79,36 +90,48 @@
                     </div>
                     <div class="primary-menu">
                         <ul class="nav">
-                            <li class="<?php if(isset($page_title) && $page_title == 'Home'){echo'active';} ?>"><a href="<?php echo base_url() ?>">Home</a></li>
+                            <li class="<?php if (isset($page_title) && $page_title == 'Home') {
+                                            echo 'active';
+                                        } ?>"><a href="<?php echo base_url() ?>">Home</a></li>
 
-                            <li class="<?php if(isset($page_title) && $page_title == 'Pricing'){echo'active';} ?>"><a href="<?php echo base_url('pricing') ?>">Pricing</a></li>
+                            <li class="<?php if (isset($page_title) && $page_title == 'Pricing') {
+                                            echo 'active';
+                                        } ?>"><a href="<?php echo base_url('pricing') ?>">Pricing</a></li>
 
-                            <li class="<?php if(isset($page_title) && $page_title == 'Users'){echo'active';} ?>"><a href="<?php echo base_url('users?sort=all') ?>">Users</a></li>
+                            <li class="<?php if (isset($page_title) && $page_title == 'Users') {
+                                            echo 'active';
+                                        } ?>"><a href="<?php echo base_url('users?sort=all') ?>">Users</a></li>
 
-                            <?php if ($settings->enable_blog == 1): ?>
-                            <li class="<?php if(isset($page_title) && $page_title == 'Blogs'){echo'active';} ?>"><a href="<?php echo base_url('blogs') ?>">Blogs</a></li>
+                            <?php if ($settings->enable_blog == 1) : ?>
+                                <li class="<?php if (isset($page_title) && $page_title == 'Blogs') {
+                                                echo 'active';
+                                            } ?>"><a href="<?php echo base_url('blogs') ?>">Blogs</a></li>
                             <?php endif ?>
 
-                            <?php if ($settings->enable_faq == 1): ?>
-                            <li class="<?php if(isset($page_title) && $page_title == 'Faq'){echo'active';} ?>"><a href="<?php echo base_url('faqs') ?>">Faqs</a></li>
+                            <?php if ($settings->enable_faq == 1) : ?>
+                                <li class="<?php if (isset($page_title) && $page_title == 'Faq') {
+                                                echo 'active';
+                                            } ?>"><a href="<?php echo base_url('faqs') ?>">Faqs</a></li>
                             <?php endif ?>
-                            
-                            <li class="<?php if(isset($page_title) && $page_title == 'Contact'){echo'active';} ?>"><a href="<?php echo base_url('contact') ?>">Contact</a></li>
+
+                            <li class="<?php if (isset($page_title) && $page_title == 'Contact') {
+                                            echo 'active';
+                                        } ?>"><a href="<?php echo base_url('contact') ?>">Contact</a></li>
 
                             <li class="hide show-xs">
-                                <?php if ($this->session->userdata('logged_in') == TRUE): ?>
-                                    <?php if (is_admin()): ?>
+                                <?php if ($this->session->userdata('logged_in') == TRUE) : ?>
+                                    <?php if (is_admin()) : ?>
                                         <a target="_blank" href="<?php echo base_url('admin/dashboard') ?>" class="bttn-1"> <i class="icon-speedometer"></i> Dashboard</a>
-                                    <?php else: ?>
-                                        <?php if ($this->settings->enable_email_verify == 1 && user()->email_verified == 0): ?>
+                                    <?php else : ?>
+                                        <?php if ($this->settings->enable_email_verify == 1 && user()->email_verified == 0) : ?>
                                             <a href="<?php echo base_url('auth/email_verify') ?>" class="bttn-1">Verify Email <i class="icon-check"></i></a>
-                                        <?php else: ?>
-                                            <?php if (check_my_payment() == TRUE): ?>
+                                        <?php else : ?>
+                                            <?php if (check_my_payment() == TRUE) : ?>
                                                 <a target="_blank" href="<?php echo base_url('admin/profile') ?>" class="bttn-2"><img class="img-circle" width="30px" src="<?php echo base_url(user()->thumb) ?>" alt=""> Manage profile <i class="fa fa-long-arrow-right"></i></a>
                                             <?php endif ?>
                                         <?php endif ?>
                                     <?php endif ?>
-                                <?php else: ?>
+                                <?php else : ?>
                                     <a href="<?php echo base_url('login') ?>" class="bttn-1">Log In <i class="icon-login"></i></a>
                                     <a href="<?php echo base_url('create-profile') ?>" class="bttn-1">Sign Up <i class="icon-note"></i></a>
                                 <?php endif ?>
@@ -116,23 +139,23 @@
                         </ul>
                     </div>
                     <div class="">
-                        <?php if ($this->session->userdata('logged_in') == TRUE): ?>
-                            
-                            <?php if (is_admin()): ?>
+                        <?php if ($this->session->userdata('logged_in') == TRUE) : ?>
+
+                            <?php if (is_admin()) : ?>
                                 <a target="_blank" href="<?php echo base_url('admin/dashboard') ?>" class="bttn-2"> <i class="icon-speedometer"></i> Dashboard</a>
-                            <?php else: ?>
-                                <?php if ($this->settings->enable_email_verify == 1 && user()->email_verified == 0): ?>
+                            <?php else : ?>
+                                <?php if ($this->settings->enable_email_verify == 1 && user()->email_verified == 0) : ?>
                                     <a href="<?php echo base_url('auth/email_verify') ?>" class="bttn-1">Verify Email <i class="icon-check"></i></a>
-                                <?php else: ?>
-                                    <?php if (check_my_payment() == TRUE): ?>
+                                <?php else : ?>
+                                    <?php if (check_my_payment() == TRUE) : ?>
                                         <a target="_blank" href="<?php echo base_url('admin/profile') ?>" class="bttn-2"><img class="img-circle" width="30px" src="<?php echo base_url(user()->thumb) ?>" alt=""> Manage profile <i class="fa fa-long-arrow-right"></i></a>
-                                    <?php else: ?>
+                                    <?php else : ?>
                                         <a href="<?php echo base_url('login') ?>" class="bttn-1">Log in <i class="icon-login"></i></a>
                                         <a href="<?php echo base_url('create-profile') ?>" class="bttn-2 btn-sm">Create Profile <i class="icon-note"></i></a>
                                     <?php endif ?>
                                 <?php endif ?>
                             <?php endif ?>
-                        <?php else: ?>
+                        <?php else : ?>
                             <a href="<?php echo base_url('login') ?>" class="bttn-1">Log in <i class="icon-login"></i></a>
                             <a href="<?php echo base_url('create-profile') ?>" class="bttn-2 btn-sm">Create Profile <i class="icon-note"></i></a>
                         <?php endif ?>
@@ -140,4 +163,4 @@
                 </div>
             </div>
         </nav>
-    </header><!-- /Header Area -->  
+    </header><!-- /Header Area -->
