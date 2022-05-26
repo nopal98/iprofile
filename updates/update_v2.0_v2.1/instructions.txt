@@ -1,7 +1,0 @@
-Update Instructions
--------------------
-Download latest script from codecanyon go to updates folder and upload 2 zip file in below directions
-
-
-application.zip  > upload path: Goto your project root folder > application   upload this zip file inside this folder and extract it.
-assets.zip  > upload path: Goto your project root folder > assets   upload this zip file inside this folder and extract it.
