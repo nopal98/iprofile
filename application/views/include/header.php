@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="author" content="Naufal Ihsan">
+
     <meta name="description" content="<?php echo html_escape($settings->description) ?>">
     <meta name="keywords" content="<?php echo html_escape($settings->keywords) ?>">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
