@@ -38,10 +38,8 @@
 
         <div class="text-center mb-20">
           <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-outline-primary custom-btngp <?php if ($user->billing_type == 'monthly') {
-                                                                  echo 'active';
-                                                                } ?>">
-              <!-- <input type="radio" name="price_type" value="monthly" class="switch_price"> Monthly -->
+
+            <!-- Cie mau inspect element -->
             </label>
             <label class="btn btn-outline-primary custom-btngp <?php if ($user->billing_type == 'yearly') {
                                                                   echo 'active';
