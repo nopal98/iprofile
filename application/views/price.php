@@ -10,9 +10,7 @@
           <div class="space-20"></div>
 
           <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <!-- <label class="btn btn-outline-primary custom-btngp">
-                        <input type="radio" name="price_type" value="monthly" class="switch_price"> Monthly
-                      </label> -->
+            <!-- Cie mau inspect element -->
             <label class="btn btn-outline-primary custom-btngp active">
               <input type="radio" name="price_type" value="yearly" class="switch_price"> Yearly
             </label>
